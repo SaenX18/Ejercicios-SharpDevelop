@@ -64,9 +64,9 @@ namespace Ejercicios_programacion
             Console.WriteLine("Digite el valor del radio de un circulo para calcular su área");
             radio = double.Parse(Console.ReadLine());
 
-            area = Math.PI * radio ^ 2;
+            area = Math.PI * Math.Pow(radio, 2);
 
-            Console.WriteLine("El área del circulo es {0} ", area);
+            Console.WriteLine("El área del circulo es: ", area);
 
             /* 14.Pedir el radio de una circunferencia y calcular su longitud. */
             double radio, longitud;
@@ -247,8 +247,116 @@ namespace Ejercicios_programacion
             {
                 Console.WriteLine("El orden de mayor a menor es {0} , {1} , {2}", num3, num2, num1);
             }
+            consola _ WriteLine(" ejercicio 24 ");
 
-            Console.ReadKey();
+            Console.WriteLine("ejercicio 24");
+
+            /* 24.Pedir un número entre 0 y 9.999 y decir cuántas cifras tiene. */
+            double num1;
+
+            Console.WriteLine("digite un numero entre 0 y 9.999");
+            num1 = double.Parse(Console.ReadLine());
+
+            if (num1 > 0 & num1 < 9)
+            {
+                Console.WriteLine("el numero tiene 1 cifra");
+            }
+            if (num1 > 10 & num1 < 99)
+            {
+                Console.WriteLine("el numero tiene 2 cifra");
+            }
+            if (num1 > 100 & num1 < 999)
+            {
+                Console.WriteLine("el numero tiene 3 cifra");
+            }
+            if (num1 > 1000 & num1 < 9999)
+            {
+                Console.WriteLine("el numero tiene 4 cifra");
+            }
+        }
+
+            /* 25.Pedir una nota de 0 a 5 y mostrarla de la forma: Insuficiente (0 – 2,9), Suficiente (3 – 4,5) y Bien (4,6 – 5) */
+            double num1;
+
+                Console.WriteLine("digite su nota");
+                num1 = double.Parse(Console.ReadLine());
+
+                if(num1 >= 0 && num1< 3) {
+                    Console.WriteLine("la nota es insuficiente");
+                }else if(num1 >= 3 && num1< 4.6) {
+                    Console.WriteLine("la nota es suficiente");
+            }else if (num1 >= 4.6 && num1 <= 5)
+            {
+                Console.WriteLine("la nota es bien");
+            }
+            else
+            {
+                Console.WriteLine("Rando incorecto");
+            }
+        }
+            /* 26.Pedir una nota numérica entera entre 0 y 10, y mostrar dicha nota de la forma: cero, uno, dos, tres. */
+
+            bool validacion = double.TryParse(Console.ReadLine(), out nota);
+            if (validacion == false)
+            {
+            (Console.WriteLine("La nota ingresada es incorrecta");
+            }
+
+            Console.WriteLine("digite su nota entre 0 y 10");
+            num1 = int.Parse(Console.ReadLine());
+
+            case 0: {
+                Console.WriteLine("cero");
+            }
+            if(num1 == 1) {
+                Console.WriteLine("uno");
+            }
+            if(num1 == 2) {
+                Console.WriteLine("dos");
+            }
+            if(num1 == 3) {
+                Console.WriteLine("tres");
+            }
+            default:
+                Console.WriteLine("Nota incorrecta.")
+
+            /* 27.Pedir un número y decir si es par o impar. */
+            double num1;
+
+            Console.WriteLine("digite su numero");
+            num1 = double.Parse(Console.ReadLine());
+
+            if((num1 % 2) == 0){
+                Console.WriteLine("es un numero par");
+            }else{
+                Console.WriteLine("no es un numero par");
+            }
+        }
+
+            /* 28.Un trabajador recibe su pago, según la cantidad de horas trabajadas y su valor. Si la cantidad de
+            horas trabajadas es mayor que 40, éstas se consideran horas extra, y tienen un incremento de $10000
+            (diez mil) sobre el valor de la hora. Calcular y mostrar el salario (pago) del trabajador. Nota: leer horas
+            trabajadas y valor de la hora. */
+            double horas_trabajadas, valor_hora, horas_extras;
+                
+            Console.WriteLine("Digite el valor de la hora");
+            valor_hora = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite la cantidad de horas trabajadas:");
+            bool validacion = double.TryParse(Console.ReadLine(), out horas_trabajadas);
+
+            salario = horas_trabajadas * valor_hora;
+
+            if (horas_trabajadas > 40)
+            {
+                horas_extras = horas_trabajadas - 40;
+                salario = salario + horas_extras * 10000;
+                Console.WriteLine("Tiene {0} horas extras", horas_extras);
+            }
+
+            Console.WriteLine("El salario es: {0}", salario);
+
+    Console.ReadKey();
         }
     }
 }
